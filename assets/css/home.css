@@ -1,0 +1,211 @@
+body{
+    /* text-align: center; */
+    background-color: hsla(0, 0%, 27%, 0.89);
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* main container for body */
+#main-container{
+    background-color: rgb(255, 255, 255);
+    width: 60%;
+    height: auto;
+    margin: auto;
+    margin-top: 25px;
+    box-shadow: 0 15px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* app heading */
+
+#page-heading{
+    margin-top: 25px;
+    margin: 10px;
+} 
+#page-heading h1{
+    padding-top: 21px;
+    color: #5a5757;
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center;
+    font-family:serif;
+}
+/* a container for category, date, etc which gives them an equal height */
+.containers{
+    height: 75px;
+}
+
+/* description container for taking the iput */
+#description-container{
+    border-top: 1px solid #b9b9b9e1;
+}
+#description-container input{
+    display: block;
+    background-color: transparent;
+    border: 0px solid;
+    padding: 0px;
+    margin: 5px;
+    font-size: 0.9rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 25px;
+    width: 95%;
+    height: 25px;
+}
+input:focus{
+    outline:none;
+}
+#description-container:active{
+    background-color:#b2ebf269;
+}
+
+/* p tag for naming the category, description */
+.details-heading {
+    color: #000000b8;
+    display: block;
+    margin: 10px 0px 2px 25px;
+    font-size: 0.97rem;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+/* category input */
+#category-date-container{
+    border-top: 1px solid #b9b9b9e1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.category-container{
+    width: 50%;
+    border-right: 1px solid #b9b9b9e1;
+}
+
+/* DRopdown menu for the category */
+select{
+    width: 90%;
+    margin-left: 25px;
+    border: 0px solid;
+    background-color: transparent;
+    font-size: 1rem;
+    opacity: 0.6;
+    font-family: Cambria, 'Times New Roman', serif;
+}
+
+select:focus{
+    outline: none;
+}
+/* Date input */
+.date-container{
+    width: 50%;
+}
+.date-container input{
+    width: 90%;
+    margin-left: 25px;
+    border: 0px solid;
+    background-color: transparent;
+    font-size: 1rem;
+    opacity: 0.6;
+    font-family: Cambria, 'Times New Roman', serif;
+}
+input:focus{
+    outline:none;
+}
+/* Add -Delete buttons */
+.add-delete-container{
+    border-top: 1px solid #b9b9b9e1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100px;
+}
+.add-button, .delete-button{
+    background-color: #3d3b3bd4;
+    margin-right: 3px;
+    margin-top: 20px;
+    height: 55px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    width: 180px;
+    
+}
+.delete-button{
+    background-color:rgb(245, 50, 50);
+    margin-left: 3px;
+}
+
+
+
+/* adding hover effects on various objects */
+#task:hover, .category-container:hover, .date-container:hover, #description-container:hover {
+    background-color: #e1e1e1;
+}
+
+/* div contains the list of todos in the database */ 
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* each task div */
+#task {
+    width: 95%;
+    border-top: 1px solid #b9b9b9e1;
+    background-color: #f4feff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 10px;
+    padding-top: 15px;
+    position: relative;
+    left: 2%;
+}
+.details{
+    width: 80%;
+}
+/* checkbox for selcting and deleting */
+#delete-box {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background: #eee;
+    border: 3px solid #3d3b3b;
+    box-shadow: inset 0px 1px 3px rgb(0 0 0 / 50%);
+    transition: all .5s ease;
+
+}
+
+/* Description details in todo list */
+#description-details {
+    color: #686767;
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+/* date-details in todo list */
+#date-details {
+    color: rgb(157, 159, 160);
+    font-size: 0.8rem;
+    margin: 0px;
+    margin-bottom: 20px;
+}
+
+/* category details of todo list */
+#category-details {
+    background-color: #007df1;
+    color: rgb(190, 242, 255);
+    height: 15px;
+    width: 75px;
+    padding: 10px;
+    font-size: 0.8rem;
+    border-radius: 3px;
+    font-weight: 550;
+    text-align: center;    
+    font-family: Baskerville, sans-serif;
+    text-transform: uppercase;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+

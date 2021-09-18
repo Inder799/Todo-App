@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>
+            <%= locals.title%>
+        </title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body>
+        <!-- main div container-->
+        <div id="main-container">
+            <!-- heading for the todolist -->
+            <div id="page-heading" class="containers">
+                <h1>
+                    <i class="fas fa-clipboard-list"></i>
+                    TODO App
+                </h1>
+                
+            </div>
+
+            <!-- input taking form -->
+            <form id="new-todo-form" action = "/add-task" method = "POST">
+                
+                <div id="description-container" class="containers">
+                    <p class="details-heading">DESCRIPTION</p>
+                    <input type="text" name = "description" placeholder = "What do you need to do?">
+                </div>
+                <div id="category-date-container" class="containers">
+                    <div class="category-container">
+                        <p class="details-heading">CATEGORY</p>
+
+                        <select name="category">
+                            <option value="Choose a Category" disabled>Choose a Category</option>
+                            <option value="personal" selected>Personal</option>
+                            <option value="work">Work</option>
+                            <option value="school">School</option>
+                            <option value="cleaning">Cleaning</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                
+                    <div class="date-container">
+                        <p class="details-heading">DUE DATE</p>
+                        <input type="date" name="date" >
+                    </div>
+                 
+                </div>
+
+                <div class="add-delete-container">
+                    <div>
+                        <button type="submit" class="add-button">
+                            <i class="fas fa-plus" aria-hidden="true"></i> 
+                            &nbsp; ADD TASK
+                        </button>
+
+                    </div>
+                    <div>
+                        <button type="submit" class="delete-button" form="delete">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                            &nbsp; DELETE TASKS
+                        </button>
+                    </div>
+                </div>
+
+
+            </form>
+
+            <div class="todo-list">
+                <form id="delete" action="/delete-task" method="POST">
+                    <% for (let i of todo_list) { %>
+                        <div id="task" >
+                        
+                            <input type="checkbox" id="delete-box" name="task" value="<%= i._id %>">
+                            <div class="details">
+                                <p id="description-details">
+                                    <%= i.description %>
+                                </p>
+                                <p id="date-details">
+                                    <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                                    &nbsp;
+                                    <%= i.date  %>
+                                </p>
+                            </div>
+                            <div id="category-details"> 
+                                <%= i.category  %>
+                            </div>
+                        </div>
+                        
+                    <%} %>
+                </form>
+            </div>
+            
+        </div>
+        
+        
+
+        
+
+        <script type="text/javascript" src="/js/home.js"></script>
+    </body>
+</html>
